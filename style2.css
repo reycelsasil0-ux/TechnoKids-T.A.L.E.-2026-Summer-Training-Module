@@ -899,3 +899,52 @@ body.theme-daybreak .tag i { color: #6f8af8; }
     .output-wrapper { flex-direction: column; align-items: center; text-align: center; }
     .output-details { text-align: center; }
 }
+
+/* --- MOBILE HEADER & HERO FIX --- */
+@media (max-width: 900px) {
+/* 1. Fix the Header */
+    .nav-container {
+        padding: 10px 15px !important;
+        justify-content: space-between !important;
+    }
+
+    .nav-container h1 {
+        font-size: 1rem !important; /* Smaller logo for mobile */
+        flex: 1;
+    }
+
+    /* This targets the middle navigation links specifically */
+    .nav-container nav {
+        display: none !important; /* Forces the middle links to hide on phones */
+    }
+
+    /* This ensures the Module buttons stay small and in one row */
+    .nav-container div[style*="flex"] {
+        gap: 5px !important;
+    }
+
+    .nav-container div a {
+        padding: 5px 10px !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* 2. Fix the Hero Background */
+    .hero {
+        height: 80vh; /* Shorter height for mobile screens */
+    }
+
+    .video-background img {
+        object-position: center; /* Ensures the middle of your GIF is always visible */
+    }
+
+    /* 3. Fix the Hero Text */
+    .hero-content h2 {
+        font-size: 2.5rem !important;
+        margin-bottom: 10px;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+        padding: 0 20px; /* Prevents text from hitting the edges of the phone */
+    }
+}
