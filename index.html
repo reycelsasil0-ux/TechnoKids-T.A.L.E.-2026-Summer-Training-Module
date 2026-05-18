@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1: The Heart</title>
+
+<!-- NEW: Browser Tab Logo (Favicon) -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+<!-- Link to your CSS file -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Fonts: Poppins for Headings, Inter for Body Text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- NEW: FontAwesome for Premium Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NEW: Reading Progress Bar -->
+<div id="progressBar"></div>
+
+<header class="nav">
+    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+        
+        <h1 id="homeLink" style="margin: 0; white-space: nowrap; font-size: 1.5rem;">Technokids Philippines</h1>
+        
+        <nav style="display: flex; justify-content: center; flex: 1; text-align: center;">
+            <a href="#reflection">Reflection</a>
+            <a href="#learning">Learning Activity</a>
+            <a href="#online">Online Research</a>
+            <a href="#output">The Output</a>
+        </nav>
+
+        <div style="display: flex; gap: 10px; white-space: nowrap;">
+            <a href="index.html" style="text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 6px 18px; border-radius: 50px; color: white; background: #d4a373; box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3);">Module 1</a>
+            <a href="module2.html" style="text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 6px 18px; border-radius: 50px; color: #5a6e73; background: transparent; border: 1px solid #e8c5c5;">Module 2</a>
+        </div>
+        
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    
+    <!-- NEW: Local Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <!-- Changed the source to your specific file name here! -->
+            <source src="tunnel.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <!-- Dark Overlay -->
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h2>Module 1</h2>
+        <p>
+            The Heart
+        </p>
+        <button id="revealBtn">START</button>
+    </div>
+</section>
+
+<!-- MAIN CONTENT WRAPPER -->
+<div id="main-content" style="display: none;">
+
+    <!-- REFLECTION -->
+<section id="reflection" class="section">
+        <h2>Reflection Question</h2>
+        <div class="content-block">
+            
+            <div class="reflection-part">
+                <p class="question-text"><strong>1. If you could give every one of your students a “superpower” through technology, what would it be and why?</strong></p>
+                <h3>The Master Cloud</h3>
+                <div class="answer-box">
+                    <p>This superpower gives students a digital "external brain" that never loses a single review sheet or project. By teaching them to use cloud-based platforms for their computer subjects, I'm giving them 24/7 access to their study materials, ensuring they ca</p>
+                </div>
+            </div>
+
+            <div class="reflection-part">
+                <p class="question-text"><strong>2. Think of a time technology made your life easier; how can you recreate that feeling of “ease” for your student?</strong></p>
+                <h3>Recreating the Feeling of "Ease"</h3>
+                <div class="answer-box">
+                    <p>Technology makes my life easier when I have access to pre-made lessons and activities that are fully structured. I can recreate this feeling of 'ease' for my students by providing them with pre-designed digital activities that include clear, step-by-step tutorials on how to complete them. This gives them a consistent guide and the confidence to explore new computer skills at their own pace without the frustration of getting stuck.</p>
+                </div>
+            </div>
+
+            <div class="reflection-part">
+                <p class="question-text"><strong>3. What is the “One Big Why” that keeps you excited to teach, even when things get challenging?</strong></p>
+                <h3>The Challenge Seeker</h3>
+                <div class="answer-box">
+                    <p>My 'One Big Why' is the belief that technology and the young minds of my students are a essential match for the rapidly evolving world they are growing into. I find technology inherently exciting, but having a deep focus on it makes it even more rewarding. I stay motivated because I believe that the more challenging a tech concept is, the more exciting it becomes for my K-6 students to master.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- LEARNING ACTIVITY -->
+    <section id="learning" class="section">
+        <h2>Learning Activity</h2>
+        
+        <div class="content-block" style="text-align: center; margin-bottom: 20px;">
+            <h3 style="font-size: 2rem; color: white; font-weight: 700; text-align: left;">The Challenge Seeker</h3>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <div class="card carousel-card">
+                        <i class="fa-solid fa-cloud icon-blue"></i>
+                        <h3>1. The Belief</h3>
+                        <p>My teaching is driven by the belief that the more challenging a tech concept is, the more exciting it becomes for students to master as their minds bloom alongside new technology.</p>
+                    </div>
+
+                    <div class="card carousel-card">
+                        <i class="fa-solid fa-laptop-code icon-purple"></i>
+                        <h3>2. The Method</h3>
+                        <p>I facilitate this growth by providing well-organized activities and comprehensive tutorials that transform complex ICT tasks into manageable learning experiences.</p>
+                    </div>
+
+                    <div class="card carousel-card">
+                        <i class="fa-solid fa-brain icon-pink"></i>
+                        <h3>3. The Goal</h3>
+                        <p>Ultimately, I aim to foster a "Master Cloud" mindset, empowering students to build a secure and permanent digital space for their learning and creativity.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="carousel-btn next-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+<section id="online" class="section">
+        <h2>Online Research</h2>
+        <div class="content-block" style="text-align: center; margin-bottom: 50px;">
+            <p style="color: #d4a373; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px;">THE GLOBAL PERSPECTIVE</p>
+        </div>
+
+        <div class="research-container">
+            
+            <details class="research-accordion">
+                <summary>1. UNESCO: Technology in Education (2023)</summary>
+                <div class="accordion-content">
+                    <h4>What the source says:</h4>
+                    <p>UNESCO explains that technology education is essential because digital skills now affect education, communication, employment, and participation in society. The report emphasizes that digital literacy, coding, and responsible technology use are becoming as important as traditional literacy.</p>
+                    <h4>Why it resonated with me:</h4>
+                    <p>This source resonated with me because it framed technology not simply as a “subject,” but as a modern survival skill. UNESCO’s idea that coding is a “new form of literacy” made me realize that students today are growing up in a world where understanding technology is no longer optional. Just like reading and writing opened opportunities in the past, digital literacy now determines how students will learn, work, and interact in the future.</p>
+                </div>
+            </details>
+
+            <details class="research-accordion">
+                <summary>2. World Economic Forum: Future of Jobs Report 2025</summary>
+                <div class="accordion-content">
+                    <h4>What the source says:</h4>
+                    <p>The report identifies AI, digital literacy, data analysis, cybersecurity, and technology-related skills as some of the fastest-growing workforce demands globally. It predicts that millions of future jobs will require technological competencies.</p>
+                    <h4>Why it resonated with me:</h4>
+                    <p>This report stood out because it connected education directly to employability. It made me think about how schools are not just preparing students to pass exams, but preparing them for careers that may not even exist yet. If students are not exposed to technology education early, they may struggle to compete in the modern workforce.</p>
+                </div>
+            </details>
+
+            <details class="research-accordion">
+                <summary>3. OECD: Digital Education Outlook</summary>
+                <div class="accordion-content">
+                    <h4>What the source says:</h4>
+                    <p>OECD highlights how technology education helps students develop 21st-century skills such as critical thinking, collaboration, creativity, and problem-solving. The organization also explains that countries investing in digital education are better preparing students for future societal and economic changes.</p>
+                    <h4>Why it resonated with me:</h4>
+                    <p>What resonated with me here is the idea that technology education develops more than technical skills. Students learn how to think critically, solve problems creatively, and adapt to change. These are lifelong skills that students need regardless of their future profession.</p>
+                </div>
+            </details>
+
+            <details class="research-accordion">
+                <summary>4. Brookings Institution: British Columbia Computer Science</summary>
+                <div class="accordion-content">
+                    <h4>What the source says:</h4>
+                    <p>The study discusses how computational thinking lessons improved students’ planning, problem-solving, and coding abilities. It also highlights how early exposure to computer science can positively affect cognitive development.</p>
+                    <h4>Why it resonated with me:</h4>
+                    <p>This source resonated with me because it proved that technology education benefits even younger learners. Technology classes are not only about using gadgets; they help students strengthen reasoning, logic, and decision-making skills that are useful in everyday life.</p>
+                </div>
+            </details>
+
+            <details class="research-accordion">
+                <summary>5. UNESCO: World Coding Day Perspective</summary>
+                <div class="accordion-content">
+                    <h4>What the source says:</h4>
+                    <p>UNESCO describes coding as a “new form of literacy in the age of artificial intelligence,” emphasizing that coding develops creativity, innovation, and problem-solving abilities.</p>
+                    <h4>Why it resonated with me:</h4>
+                    <p>This perspective strongly resonated with me because it compares coding to literacy. It reminded me that students today need to understand the language of technology the same way previous generations needed to understand books and written communication.</p>
+                </div>
+            </details>
+
+            <details class="research-accordion">
+                <summary>6. UNESCO: Digital Citizenship Education</summary>
+                <div class="accordion-content">
+                    <h4>What the source says:</h4>
+                    <p>The article explains that students must learn how to behave responsibly online, identify misinformation, protect privacy, and participate ethically in digital spaces.</p>
+                    <h4>Why it resonated with me:</h4>
+                    <p>This source resonated with me because technology education is not only about technical skills—it is also about responsibility. Students today spend a huge part of their lives online, so schools have a responsibility to teach safe and ethical digital behavior.</p>
+                </div>
+            </details>
+                <details class="research-accordion">
+                <summary>References</summary>
+                <div class="accordion-content">
+                                <ul class="reference-list">
+                <li>
+                    <strong>UNESCO. (2023).</strong> Technology in Education: A Tool on Whose Terms? Global Education Monitoring Report 2023. 
+                    <a href="https://gem-report-2023.unesco.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>World Economic Forum. (2025).</strong> The Future of Jobs Report 2025. 
+                    <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>OECD. (2023).</strong> Digital Education Outlook 2023. 
+                    <a href="https://www.oecd.org/education/digital-education-outlook/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>Brookings Institution. (2022).</strong> How British Columbia Implemented its Computer Science Education Program. 
+                    <a href="https://www.brookings.edu/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>UNESCO. (n.d.).</strong> World Coding Day. 
+                    <a href="https://www.unesco.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>UNESCO. (2024).</strong> Why Digital Global Citizenship Education is Essential. 
+                    <a href="https://www.unesco.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>UNESCO. (2018).</strong> ICT Competency Framework for Teachers. 
+                    <a href="https://www.unesco.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>World Bank. (2016).</strong> World Development Report 2016: Digital Dividends. 
+                    <a href="https://www.worldbank.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>International Labour Organization. (2022).</strong> The ILO Strategy on Skills and Lifelong Learning 2030. 
+                    <a href="https://www.ilo.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+                <li>
+                    <strong>UNESCO. (2019).</strong> SDG 4 Data Digest: Data to Nurture Learning. 
+                    <a href="https://uis.unesco.org/" target="_blank">View Source <i class="fa-solid fa-link"></i></a>
+                </li>
+            </ul>
+                </div>
+            </details>
+        </div>
+
+            <div class="overall-reflection-box">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <h3>Overall Reflection</h3>
+            <p>After reviewing these studies and global perspectives, I realized that technology education is considered non-negotiable because technology now shapes almost every part of modern life—education, communication, employment, and citizenship. These sources collectively show that students who develop digital skills are better prepared for future careers, better equipped to solve problems, and more capable of participating responsibly in society.</p>
+            <p style="margin-top: 15px;"><strong>What resonated with me most is the idea that technology education is no longer only about learning devices — it is about preparing students to thrive in a rapidly changing world. It is about preparing students to thrive in a rapidly changing world.</strong></p>
+        </div>
+    </section>
+
+<!-- OUTPUT -->
+<section id="output" class="section alt">
+
+    <h2>The Output</h2>
+
+    <div class="output-showcase-container">
+
+        <!-- LEFT SIDE -->
+        <div class="showcase-poster">
+
+            <div class="poster-frame">
+
+                <p class="poster-subtitle">
+                    ICT EDUCATOR PURPOSE
+                </p>
+
+                <h3 class="poster-title">
+                    Building Courage Through Technology
+                </h3>
+
+                <div class="poster-divider"></div>
+
+                <p class="poster-text">
+                    I want my students to view technology not as something intimidating,
+                    but as a space where they can explore, create, and grow confidently.
+                </p>
+
+                <p class="poster-text">
+                    By guiding students with patience and structure,
+                    I hope to help them become independent learners
+                    who are prepared for a constantly changing digital world.
+                </p>
+
+                <i class="fa-solid fa-seedling poster-icon"></i>
+
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="showcase-audio">
+
+            <h3>Why I Continue Teaching</h3>
+
+            <p>
+                A short reflection about my purpose as an ICT educator
+                and the impact I hope to create through technology education.
+            </p>
+
+            <div class="custom-audio-player">
+
+                <button class="play-btn" id="playBtn" aria-label="Play audio">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+                <div class="audio-controls">
+
+                    <audio id="visionAudio" src="record.mp3"></audio>
+
+                    <div class="audio-track" id="audioTrack">
+                        <div class="audio-progress" id="audioProgress"></div>
+                    </div>
+
+                    <div class="audio-time">
+                        <span id="currentTime">0:00</span>
+                        /
+                        <span id="totalTime">0:00</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="feature-tags">
+
+                <span class="tag">
+                    <i class="fa-solid fa-check"></i>
+                    Student Confidence
+                </span>
+
+                <span class="tag">
+                    <i class="fa-solid fa-check"></i>
+                    Creativity
+                </span>
+
+                <span class="tag">
+                    <i class="fa-solid fa-check"></i>
+                    Future Readiness
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+        </div>
+    </section>
+
+    <footer>
+        <p>Module 1: The Heart</p>
+    </footer>
+
+</div>
+
+<!-- NEW: Floating Back to Top Button -->
+<button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
