@@ -1,0 +1,237 @@
+/* --- ULTIMATE TRANSITION & SMOOTH SCROLL FIX --- */
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 80px; 
+}
+
+/* 1. Remove the animation from the body */
+body {
+    font-family: 'Poppins', sans-serif; 
+    background: #f8fafc; 
+    color: #1a1e36; 
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    /* (Notice the animation line is gone here!) */
+}
+
+/* 2. Apply it only to the content below the nav bar */
+.hero, .section {
+    animation: pageFadeIn 0.8s ease-out forwards;
+}
+
+/* 3. Use the original keyframes */
+@keyframes pageFadeIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+a, button, .mentor-tab-btn {
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* SELECTION & SCROLLBAR */
+::selection { background-color: #00b0ff; color: #ffffff; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0b0c10; }
+::-webkit-scrollbar-thumb { background: #a3b899; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #2e7d32; }
+
+/* NAV BAR */
+.nav { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1300px; margin: 0 auto; padding: 15px 30px; }
+.nav-container h1 { font-size: 1.5rem; color: #1a1e36; font-weight: 700; white-space: nowrap; cursor: pointer; }
+.nav nav { display: flex; justify-content: center; flex: 1; text-align: center; white-space: nowrap; }
+.nav nav a { text-decoration: none; color: #6c7293; margin: 0 15px; font-weight: 600; font-size: 0.95rem; }
+.nav nav a:hover { color: #2e7d32; }
+
+.mod-btn { text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; }
+.label-btn { color: #6c7293; background: transparent; border: 1px solid #a3b899; }
+.label-btn:hover { background: #f4f5fa; }
+.active-btn { color: white; background: #2e7d32; box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3); }
+
+/* --- FIX: NAV BAR HOVER LINE --- */
+.nav nav a {
+    position: relative;
+}
+
+.nav nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #2e7d32; /* Sage Green Line */
+    transition: width 0.3s ease;
+}
+
+.nav nav a:hover::after {
+    width: 100%;
+}
+
+/* --- FIX: SAGE GREEN DIVIDER COLORS --- */
+.bg-sage { background: #2e7d32 !important; }
+.text-sage { color: #2e7d32 !important; }
+
+/* HERO SECTION - FULL SCREEN EDITION WITH OVERLAY FIXES */
+.hero { 
+    height: 100vh; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: white; 
+    padding: 0 20px; 
+    overflow: hidden; 
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.video-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0.8;
+}
+
+.hero-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(15, 23, 42, 0.65); 
+    z-index: -1; 
+}
+
+.hero-content h2 { 
+    font-size: 3.5rem; 
+    font-weight: 700;
+    color: #ffffff !important; 
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.hero-content .subtitle { 
+    font-size: 1.6rem; 
+    color: #00b0ff !important; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p { 
+    max-width: 700px; 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    margin: 0 auto; 
+    color: #f8fafc !important; 
+    opacity: 0.95; 
+}
+
+/* SECTIONS */
+.section { padding: 90px 20px; max-width: 1200px; margin: 0 auto; }
+.section.alt { background: #f4f5fa; max-width: 100%; }
+.section h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #1a1e36; }
+
+/* 1. REFLECTION SYSTEM */
+.reflection-list { display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: 0 auto; }
+.reflection-item { display: flex; gap: 20px; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); }
+.q-num { font-weight: 700; border-radius: 8px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+.q-text h3 { font-size: 1.15rem; color: #1a1e36; margin-bottom: 10px; line-height: 1.5; }
+.q-text p { color: #6c7293; line-height: 1.7; }
+.bg-sage { background: #2e7d32; }
+.bg-blue { background: #00b0ff; }
+.border-left-sage { border-left: 5px solid #2e7d32 !important; }
+.border-left-blue { border-left: 5px solid #00b0ff !important; }
+
+/* 2. ACTIVITY BLOCKS */
+.interview-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; max-width: 1100px; margin: 0 auto; }
+.interview-card { width: 100%; max-width: 450px; background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(46, 125, 50, 0.05); display: flex; flex-direction: column; }
+.interview-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(46, 125, 50, 0.12); }
+.interview-image-wrapper { width: 100%; background: #e4e3f1; overflow: hidden; }
+.interview-image-wrapper img { width: 100%; height: auto; display: block; }
+.interview-content { padding: 35px 30px; flex: 1; display: flex; flex-direction: column; }
+.interview-name { font-size: 1.5rem; margin-bottom: 5px; }
+.interview-role { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; opacity: 0.7; }
+.quote-mark { font-size: 2rem; margin-bottom: 15px; opacity: 0.3; }
+.interview-quote { font-size: 1.15rem; font-weight: 600; line-height: 1.6; color: #1a1e36; font-style: italic; }
+
+.card-blue .interview-content { background: #f0fdf4; border-bottom: 6px solid #2e7d32; }
+.card-blue .interview-name, .card-blue .quote-mark { color: #2e7d32 !important; }
+.card-purple .interview-content { background: #f0f9ff; border-bottom: 6px solid #00b0ff; }
+.card-purple .interview-name, .card-purple .quote-mark { color: #00b0ff !important; }
+
+/* 3. RESEARCH DASHBOARD */
+.mentor-dashboard { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.mentor-tabs { display: flex; gap: 30px; margin-bottom: -45px; z-index: 10; }
+.mentor-tab-btn { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; cursor: pointer; border: 5px solid #ffffff; background: #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.06); filter: grayscale(100%) opacity(0.5); }
+.mentor-tab-btn.active { filter: grayscale(0%) opacity(1); transform: scale(1.15) translateY(-10px); border-color: var(--active-color); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.mentor-display { background: #ffffff; border-radius: 25px; padding: 80px 50px 50px 50px; width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.04); text-align: center; }
+
+/* DASHBOARD CROSSFADE ANIMATION */
+.mentor-content-pane { display: none; opacity: 0; }
+.mentor-content-pane.active { display: block; animation: smoothCrossfade 0.5s ease-in-out forwards; }
+@keyframes smoothCrossfade { 
+    0% { opacity: 0; transform: translateY(10px); } 
+    100% { opacity: 1; transform: translateY(0); } 
+}
+
+.mentor-divider { width: 60px; height: 4px; margin: 15px auto 25px auto; border-radius: 2px; }
+.text-blue { color: #2e7d32 !important; }
+.text-purple { color: #00b0ff !important; }
+.mentor-title { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6c7293; margin-bottom: 20px; }
+.mentor-text { font-size: 1rem; line-height: 1.7; color: #6c7293; text-align: left; max-width: 750px; margin: 0 auto; }
+
+/* 4. OUTPUT DISPLAY */
+.output-wrapper { display: flex; align-items: center; gap: 50px; max-width: 1200px; margin: 0 auto; }
+.screen-mockup { flex: 1.2; display: flex; justify-content: center; }
+.laptop-frame.portrait-mode { width: 100%; max-width: 480px; background: #1a1e36; border-radius: 15px 15px 0 0; padding: 12px; box-shadow: 0 25px 50px rgba(46, 125, 50, 0.15); }
+.screen-content { width: 100%; background: #ffffff; border-radius: 5px; overflow: hidden; }
+.screen-content img { width: 100%; height: auto; display: block; }
+.laptop-base { width: 110%; height: 12px; background: #6c7293; margin-left: -5%; border-radius: 0 0 15px 15px; }
+.output-details { flex: 1; text-align: left; display: flex; flex-direction: column; justify-content: center; }
+.bio-text { background: rgba(46, 125, 50, 0.02); padding: 25px; border-radius: 15px; border-left: 4px solid #a3b899; margin-bottom: 20px; }
+.bio-text p { color: #6c7293; font-size: 1.05rem; line-height: 1.8; }
+.feature-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.tag { background: #ffffff; padding: 6px 16px; border-radius: 50px; border: 1px solid #e4e3f1; font-size: 0.85rem; font-weight: 600; color: #6c7293; }
+.tag i { margin-right: 6px; color: #2e7d32; }
+
+/* --- RESPONSIVE MOBILE FIXES --- */
+@media (max-width: 900px) {
+    .nav-container { padding: 10px 15px !important; justify-content: space-between !important; }
+    .nav-container h1 { font-size: 1rem !important; flex: 1; }
+    .nav-container nav { display: none !important; }
+    .module-switcher { gap: 5px !important; }
+    .module-switcher .mod-btn { padding: 5px 10px !important; font-size: 0.7rem !important; }
+    
+    .hero { height: 85vh; }
+    .hero-content h2 { font-size: 2.8rem !important; }
+    .hero-content .subtitle { font-size: 1.4rem !important; }
+    
+    .reflection-item { flex-direction: column; gap: 15px; }
+    .q-num { width: 40px; height: 40px; }
+    
+    .mentor-tabs { gap: 15px; }
+    .mentor-tab-btn { width: 80px; height: 80px; }
+    .mentor-tab-btn i { margin-top: 15px !important; }
+    .mentor-display { padding: 60px 30px 40px 30px; }
+    
+    .output-wrapper { flex-direction: column; text-align: center; gap: 35px; }
+    .screen-mockup { width: 100%; max-width: 400px; }
+    .output-details { text-align: center; }
+    .bio-text { text-align: left; border-left: none; border-top: 4px solid #a3b899; }
+    .feature-tags { justify-content: center; }
+}
